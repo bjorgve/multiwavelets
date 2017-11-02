@@ -46,15 +46,15 @@ def wavelet(j,np,x):
 # returns the value of all wavelet functions of order np in x
 #
 def wavelets(np,x):
-    print "FIXME"
+    print("FIXME")
 
 #
 # Given the number of polynomials np, the scale n, the translation l and the position x,
 # returns the value of all wavelet functions of order np in x at scale n and translation l
 #
 def wavelets_nl(n,l,np,x):
-    print "FIXME"
-    
+    print("FIXME")
+
 #
 # Given the index j, the scale n, the translation l and the position x,
 # returns the value of the scaling function j at scale n and translation l
@@ -72,7 +72,7 @@ def wavelet_nl(j, n, l, np, x):
 
 #
 # Load the requested filter matrix (H/G and 0/1) for a given order np
-# 
+#
 def getfilter(type="H",flag=0,np=4):
     order = np - 1
     name = "mwfilters/L_" + type + "0_" + str(order)
@@ -127,6 +127,3 @@ if __name__ == '__main__':
     plt.plot(x, y2)
     plt.plot(x, y3)
     plt.show()
-
-
-    
