@@ -6,7 +6,7 @@ def legendre_polynomial(order, x):
     coef = []
     if type(x) is float:
 
-        if x<0 or x>1:
+        if x<= 0 or x>1:
             return 0
         else:
             for n in range(0, order+1):
@@ -20,7 +20,7 @@ def legendre_polynomial(order, x):
 
         for i in range(x.size):
 
-            if x[i] < 0 or x[i] > 1:
+            if x[i] <= 0 or x[i] > 1:
                 y[i] = 0
             else:
                 for n in range(0, order+1):
@@ -36,8 +36,7 @@ def legendre_polynomial(order, x):
 def scaling(order,scale, translation,x):
     return 2**(scale/2)*legendre_polynomial(order,2**scale*x-translation)
 
-def scaling_inter(order,max_order, scale, translation, x):
-    return 2**(scale/2)*interpolating(order,max_order,2**scale*x-translation)
+
 
 def roots(order):
     coef=[]
@@ -90,7 +89,7 @@ def scaling_coef(order,order_max,scale,translation,f):
 
 def func_proj(scale,max_order,f,x):
     tmp = 0
-    for j in range(0,max_order+1):
+    for j in range(0,max_order):
         for l in range(0,2**scale):
             tmp = tmp+scaling_coef(j,max_order,scale,l,f)*scaling(j,scale,l,x)
     return tmp
